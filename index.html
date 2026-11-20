@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokemon: Kanto Mini Quest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="top-header">
+      <div class="title-group">
+        <span class="eyebrow">GAME BOY ADVANCE PIXEL EDITION</span>
+        <h1>Pokemon: Kanto Mini Quest</h1>
+      </div>
+      <div class="toolbar-actions">
+        <span id="badgePill" class="badge-pill">BOULDER BADGE: LOCKED</span>
+        <button type="button" id="sfxToggleBtn" class="ui-btn active-toggle">SFX: ON</button>
+        <button type="button" id="bgmToggleBtn" class="ui-btn">BGM: OFF</button>
+        <button type="button" id="newGameBtn" class="ui-btn">NEW GAME</button>
+      </div>
+    </header>
+
+    <div class="main-grid">
+      <section class="gba-console" id="consoleFrame" tabindex="0">
+        <div class="gba-top-bar">
+          <span class="shoulder-tag">L / MENU</span>
+          <div class="power-led-wrap">
+            <span class="power-led"></span>
+            <span>BATTERY OK</span>
+          </div>
+          <span class="shoulder-tag">R / RUN</span>
+        </div>
+
+        <div class="gba-bezel">
+          <div class="screen-wrap">
+            <canvas id="gameCanvas" width="480" height="320"></canvas>
+          </div>
+          <div class="bezel-brand">
+            <span>GAME BOY ADVANCE</span>
+            <span id="zoneLabel" class="zone-readout">OAK'S LAB</span>
+          </div>
+        </div>
+
+        <div class="gba-controls">
+          <div class="dpad" aria-label="Directional Pad">
+            <span></span>
+            <button type="button" class="dpad-btn" data-key="UP" aria-label="Up">U</button>
+            <span></span>
+            <button type="button" class="dpad-btn" data-key="LEFT" aria-label="Left">L</button>
+            <span class="dpad-center"></span>
+            <button type="button" class="dpad-btn" data-key="RIGHT" aria-label="Right">R</button>
+            <span></span>
+            <button type="button" class="dpad-btn" data-key="DOWN" aria-label="Down">D</button>
+            <span></span>
+          </div>
+
+          <div class="center-pills">
+            <button type="button" class="pill-btn" data-key="SELECT">SELECT</button>
+            <button type="button" class="pill-btn" data-key="START">START</button>
+          </div>
+
+          <div class="ab-cluster">
+            <button type="button" class="ab-btn btn-b" data-key="B" aria-label="B Button">B</button>
+            <button type="button" class="ab-btn btn-a" data-key="A" aria-label="A Button">A</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="hud-stack">
+        <section class="hud-card">
+          <div class="card-head">
+            <h2 class="card-title">Active Party (Click to Lead)</h2>
+            <span id="moneyDisplay" class="card-meta">$300</span>
+          </div>
+          <div id="partyList" class="party-list">
+            <div class="empty-hint">Choose your starter Pokemon on the GBA screen to begin!</div>
+          </div>
+        </section>
+
+        <section class="hud-card">
+          <div class="card-head">
+            <h2 class="card-title">Trainer Bag (Click Item to Use)</h2>
+            <span id="pcBoxDisplay" class="card-meta">PC Box: 0</span>
+          </div>
+          <div id="bagGrid" class="bag-grid"></div>
+        </section>
+
+        <section class="hud-card">
+          <div class="card-head">
+            <h2 class="card-title">Kanto Mini-Dex</h2>
+            <span id="dexCountDisplay" class="card-meta">0 / 16 Caught</span>
+          </div>
+          <div id="dexGrid" class="dex-grid"></div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="controls-guide">
+      <div class="guide-box">
+        <span class="card-title">Controls</span>
+        <p>Move &amp; navigate with <kbd>WASD</kbd> or <kbd>Arrows</kbd> (or D-Pad). Confirm/Interact with <kbd>Z</kbd>, <kbd>Enter</kbd>, or <kbd>Space</kbd> (<kbd>A</kbd>). Cancel/Back with <kbd>X</kbd> or <kbd>Esc</kbd> (<kbd>B</kbd>). Open in-game menu with <kbd>M</kbd> (<kbd>START</kbd>).</p>
+      </div>
+      <div class="guide-box">
+        <span class="card-title">Adventure Goal</span>
+        <p>Explore tall grass to train and catch wild Kanto Pokemon, heal and restock inside the <strong>PKMN Center</strong>, evolve starters at <strong>Lv. 8</strong>, and defeat <strong>Gym Leader Brock</strong> in the North-East Pewter Gym!</p>
+      </div>
+      <div class="guide-box">
+        <span class="card-title">Type Matchups</span>
+        <p><strong>Water</strong> beats Fire &amp; Rock. <strong>Grass</strong> beats Water &amp; Rock. <strong>Fire</strong> beats Grass. <strong>Electric</strong> beats Water &amp; Flying. <strong>Rock</strong> beats Fire &amp; Flying. <strong>Ghost</strong> resists Normal.</p>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

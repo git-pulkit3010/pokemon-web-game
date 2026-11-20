@@ -1,0 +1,16 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE state
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and local scratch output
+*.log
+npm-debug.log*
+tmp/
+.cache/

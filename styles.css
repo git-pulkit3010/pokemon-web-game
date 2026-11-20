@@ -1,0 +1,516 @@
+:root {
+      --artifact-background: #f4f6fa;
+      --artifact-background-light: #ffffff;
+      --artifact-background-mid: #eaeef5;
+      --artifact-border-light: #dce2ec;
+      --artifact-border-dark: #c2cbd9;
+      --artifact-primary-brand: #3559e6;
+      --artifact-primary-highlight: #111622;
+      --artifact-primary-hover: #2544bf;
+      --artifact-selected: #e7edfc;
+      --artifact-text-primary: #12161f;
+      --artifact-text-secondary: #556070;
+      --artifact-text-highlight: #e8eefc;
+      --artifact-positive-background: #e6f6ed;
+      --artifact-positive-text: #0f5132;
+      --artifact-positive: #18a066;
+      --artifact-warning: #d98218;
+      --artifact-negative: #d94343;
+      --artifact-xp: #2490e0;
+
+      --artifact-gba-shell: #4c46a6;
+      --artifact-gba-shell-edge: #383285;
+      --artifact-gba-shell-bumper: #dadfeb;
+      --artifact-gba-bezel: #1f232d;
+      --artifact-gba-bezel-text: #9aa4b8;
+      --artifact-gba-led-on: #30d158;
+      --artifact-gba-dpad: #2a2e3b;
+      --artifact-gba-dpad-hover: #3b4154;
+      --artifact-gba-dpad-text: #cfd6e4;
+      --artifact-gba-btn-a: #d63855;
+      --artifact-gba-btn-a-edge: #9e2139;
+      --artifact-gba-btn-b: #e04a68;
+      --artifact-gba-btn-text: #ffffff;
+      --artifact-gba-pill: #343948;
+      --artifact-gba-pill-text: #d6dce8;
+      --artifact-shadow-card: 0 2px 8px rgba(16, 24, 40, 0.06);
+      --artifact-shadow-shell: 0 10px 28px rgba(24, 28, 56, 0.18);
+      --artifact-badge-gold-bg: #fef4d6;
+      --artifact-badge-gold-fg: #7a5200;
+      --artifact-badge-gold-border: #ebca71;
+    }
+
+    html[data-theme='dark'] {
+      --artifact-background: #0b0d12;
+      --artifact-background-light: #131720;
+      --artifact-background-mid: #1b202c;
+      --artifact-border-light: #262c3a;
+      --artifact-border-dark: #384154;
+      --artifact-primary-brand: #6a92ff;
+      --artifact-primary-highlight: #f2f5fa;
+      --artifact-primary-hover: #88a8ff;
+      --artifact-selected: #1c253b;
+      --artifact-text-primary: #edf0f7;
+      --artifact-text-secondary: #96a0b3;
+      --artifact-text-highlight: #172340;
+      --artifact-positive-background: #102b1f;
+      --artifact-positive-text: #a8f0cb;
+      --artifact-positive: #3fd18d;
+      --artifact-warning: #f2a33a;
+      --artifact-negative: #f26464;
+      --artifact-xp: #4cb3ff;
+
+      --artifact-gba-shell: #3e398f;
+      --artifact-gba-shell-edge: #292566;
+      --artifact-gba-shell-bumper: #282e3d;
+      --artifact-gba-bezel: #0f1218;
+      --artifact-gba-bezel-text: #8c96ab;
+      --artifact-gba-led-on: #3ce065;
+      --artifact-gba-dpad: #222632;
+      --artifact-gba-dpad-hover: #32384a;
+      --artifact-gba-dpad-text: #d8deeb;
+      --artifact-gba-btn-a: #cf3450;
+      --artifact-gba-btn-a-edge: #8f1d33;
+      --artifact-gba-btn-b: #db4663;
+      --artifact-gba-btn-text: #ffffff;
+      --artifact-gba-pill: #262b38;
+      --artifact-gba-pill-text: #cfd6e6;
+      --artifact-shadow-card: 0 2px 10px rgba(0, 0, 0, 0.35);
+      --artifact-shadow-shell: 0 12px 32px rgba(0, 0, 0, 0.55);
+      --artifact-badge-gold-bg: #33270b;
+      --artifact-badge-gold-fg: #f7d674;
+      --artifact-badge-gold-border: #6b5216;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--artifact-background);
+      color: var(--artifact-text-primary);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .app-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 18px 36px;
+    }
+
+    .top-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--artifact-border-light);
+    }
+
+    .title-group { display: flex; flex-direction: column; gap: 2px; }
+
+    .eyebrow {
+      font-family: "SF Mono", "IBM Plex Mono", "Consolas", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--artifact-text-secondary);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--artifact-text-primary);
+    }
+
+    .toolbar-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+    .ui-btn {
+      appearance: none;
+      border: 1px solid var(--artifact-border-dark);
+      background-color: var(--artifact-background-light);
+      color: var(--artifact-text-primary);
+      font-family: "SF Mono", "IBM Plex Mono", "Consolas", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 11px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .ui-btn:hover { background-color: var(--artifact-background-mid); }
+    .ui-btn.active-toggle {
+      background-color: var(--artifact-selected);
+      border-color: var(--artifact-primary-brand);
+      color: var(--artifact-primary-brand);
+    }
+    .ui-btn.danger-confirm {
+      background-color: var(--artifact-negative);
+      border-color: var(--artifact-negative);
+      color: var(--artifact-gba-btn-text);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-family: "SF Mono", "IBM Plex Mono", "Consolas", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      background-color: var(--artifact-background-mid);
+      color: var(--artifact-text-secondary);
+      border: 1px solid var(--artifact-border-light);
+    }
+    .badge-pill.earned {
+      background-color: var(--artifact-badge-gold-bg);
+      color: var(--artifact-badge-gold-fg);
+      border-color: var(--artifact-badge-gold-border);
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
+      gap: 18px;
+      align-items: start;
+    }
+    @media screen and (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+
+    .gba-console {
+      background-color: var(--artifact-gba-shell);
+      border: 3px solid var(--artifact-gba-shell-edge);
+      border-radius: 22px 22px 34px 34px;
+      padding: 16px 16px 20px;
+      box-shadow: var(--artifact-shadow-shell);
+      position: relative;
+      outline: none;
+    }
+    .gba-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 0 6px;
+    }
+    .shoulder-tag {
+      background-color: var(--artifact-gba-shell-bumper);
+      color: var(--artifact-text-primary);
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+    }
+    .power-led-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 10px;
+      color: var(--artifact-gba-pill-text);
+      letter-spacing: 0.08em;
+    }
+    .power-led {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--artifact-gba-led-on);
+    }
+    .gba-bezel {
+      background-color: var(--artifact-gba-bezel);
+      border-radius: 12px 12px 18px 18px;
+      padding: 12px 12px 10px;
+      border: 2px solid var(--artifact-gba-shell-edge);
+    }
+    .screen-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      background-color: var(--artifact-gba-bezel);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    #gameCanvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      cursor: pointer;
+    }
+    .bezel-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      padding: 0 4px;
+      font-family: "SF Mono", "IBM Plex Mono", "Consolas", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--artifact-gba-bezel-text);
+    }
+    .zone-readout {
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      font-size: 11px;
+      color: var(--artifact-gba-bezel-text);
+    }
+
+    .gba-controls {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 0 6px;
+    }
+    .dpad {
+      display: grid;
+      grid-template-columns: repeat(3, 36px);
+      grid-template-rows: repeat(3, 36px);
+      gap: 2px;
+      justify-self: start;
+    }
+    .dpad-btn {
+      appearance: none;
+      border: none;
+      background-color: var(--artifact-gba-dpad);
+      color: var(--artifact-gba-dpad-text);
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+    .dpad-btn:hover, .dpad-btn:active { background-color: var(--artifact-gba-dpad-hover); }
+    .dpad-center { background-color: var(--artifact-gba-dpad); border-radius: 3px; }
+    .center-pills {
+      display: flex;
+      gap: 10px;
+      align-self: end;
+      padding-bottom: 4px;
+    }
+    .pill-btn {
+      appearance: none;
+      border: 1px solid var(--artifact-gba-shell-edge);
+      background-color: var(--artifact-gba-pill);
+      color: var(--artifact-gba-pill-text);
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .pill-btn:hover { background-color: var(--artifact-gba-dpad-hover); }
+    .ab-cluster { display: flex; align-items: center; gap: 14px; justify-self: end; }
+    .ab-btn {
+      appearance: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 3px solid var(--artifact-gba-btn-a-edge);
+      background-color: var(--artifact-gba-btn-a);
+      color: var(--artifact-gba-btn-text);
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+    .ab-btn.btn-b { background-color: var(--artifact-gba-btn-b); transform: translateY(10px); }
+    .ab-btn.btn-a { transform: translateY(-6px); }
+    .ab-btn:active { filter: brightness(0.92); }
+
+    .hud-stack { display: flex; flex-direction: column; gap: 14px; }
+    .hud-card {
+      background-color: var(--artifact-background-light);
+      border: 1px solid var(--artifact-border-light);
+      border-radius: 10px;
+      padding: 14px;
+      box-shadow: var(--artifact-shadow-card);
+    }
+    .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .card-title {
+      margin: 0;
+      font-family: "SF Mono", "IBM Plex Mono", "Consolas", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--artifact-text-secondary);
+    }
+    .card-meta {
+      font-family: "SF Mono", "IBM Plex Mono", "Consolas", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--artifact-text-primary);
+    }
+    .party-list { display: flex; flex-direction: column; gap: 8px; }
+    .party-slot {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background-color: var(--artifact-background);
+      border: 1px solid var(--artifact-border-light);
+      cursor: pointer;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+    .party-slot:hover { border-color: var(--artifact-primary-brand); }
+    .party-slot.lead-slot {
+      border-color: var(--artifact-primary-brand);
+      background-color: var(--artifact-selected);
+    }
+    .party-slot.fainted-slot { opacity: 0.62; }
+    .mini-sprite {
+      width: 36px;
+      height: 36px;
+      image-rendering: pixelated;
+      background-color: var(--artifact-background-light);
+      border-radius: 6px;
+      border: 1px solid var(--artifact-border-light);
+    }
+    .slot-info { min-width: 0; }
+    .slot-top { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; margin-bottom: 4px; }
+    .slot-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--artifact-text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .slot-lvl { font-family: "SF Mono", "Consolas", monospace; font-size: 11px; color: var(--artifact-text-secondary); }
+    .bar-track { width: 100%; height: 6px; background-color: var(--artifact-background-mid); border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; background-color: var(--artifact-positive); transition: width 0.25s ease; }
+    .bar-fill.hp-mid { background-color: var(--artifact-warning); }
+    .bar-fill.hp-low { background-color: var(--artifact-negative); }
+    .xp-track { width: 100%; height: 3px; margin-top: 3px; background-color: var(--artifact-background-mid); border-radius: 999px; overflow: hidden; }
+    .xp-fill { height: 100%; background-color: var(--artifact-xp); }
+    .slot-hp-num { font-family: "SF Mono", "Consolas", monospace; font-size: 11px; color: var(--artifact-text-secondary); text-align: right; }
+
+    .bag-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .bag-item-btn {
+      appearance: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-radius: 7px;
+      border: 1px solid var(--artifact-border-light);
+      background-color: var(--artifact-background);
+      color: var(--artifact-text-primary);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+    }
+    .bag-item-btn:hover { border-color: var(--artifact-primary-brand); background-color: var(--artifact-selected); }
+    .bag-qty { font-family: "SF Mono", "Consolas", monospace; font-size: 11px; font-weight: 700; color: var(--artifact-primary-brand); }
+
+    .dex-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+    .dex-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 4px;
+      border-radius: 6px;
+      background-color: var(--artifact-background);
+      border: 1px solid var(--artifact-border-light);
+      text-align: center;
+    }
+    .dex-cell.caught { border-color: var(--artifact-positive); background-color: var(--artifact-positive-background); }
+    .dex-name {
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 10px;
+      color: var(--artifact-text-secondary);
+      margin-top: 3px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .dex-cell.caught .dex-name { color: var(--artifact-positive-text); font-weight: 600; }
+    .dex-icon { width: 28px; height: 28px; image-rendering: pixelated; }
+    .dex-unknown { opacity: 0.22; filter: grayscale(1); }
+
+    .controls-guide {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .guide-box {
+      background-color: var(--artifact-background-light);
+      border: 1px solid var(--artifact-border-light);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .guide-box p { margin: 4px 0 0; font-size: 12.5px; color: var(--artifact-text-secondary); }
+    kbd {
+      display: inline-block;
+      padding: 1px 5px;
+      font-family: "SF Mono", "Consolas", monospace;
+      font-size: 11px;
+      border-radius: 4px;
+      border: 1px solid var(--artifact-border-dark);
+      background-color: var(--artifact-background-mid);
+      color: var(--artifact-text-primary);
+    }
+    .empty-hint { font-size: 12px; color: var(--artifact-text-secondary); padding: 6px 2px; }
+
+    @media print {
+      @page { size: auto !important; }
+      body {
+        margin: 0;
+        padding: 0.4in 0.6in;
+        background: #fff;
+        color: #111;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .app-shell, .main-grid {
+        max-width: 100% !important;
+        width: 100% !important;
+        display: block !important;
+      }
+      .gba-console, .hud-card, .guide-box {
+        break-inside: avoid;
+        margin-bottom: 16px !important;
+        box-shadow: none !important;
+        border: 1px solid rgba(0,0,0,0.12);
+      }
+      .gba-controls, .toolbar-actions, button, [role="button"], .interactive-only {
+        display: none !important;
+      }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
