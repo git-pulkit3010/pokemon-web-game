@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokemon: Kanto Mini Quest</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-backend-additions.css">
 </head>
 <body>
   <main class="app-shell">
@@ -14,6 +15,7 @@
         <h1>Pokemon: Kanto Mini Quest</h1>
       </div>
       <div class="toolbar-actions">
+        <span id="apiStatusPill" class="badge-pill">API: CHECKING</span>
         <span id="badgePill" class="badge-pill">BOULDER BADGE: LOCKED</span>
         <button type="button" id="sfxToggleBtn" class="ui-btn active-toggle">SFX: ON</button>
         <button type="button" id="bgmToggleBtn" class="ui-btn">BGM: OFF</button>
@@ -93,6 +95,22 @@
           </div>
           <div id="dexGrid" class="dex-grid"></div>
         </section>
+
+        <section class="hud-card interactive-only">
+          <div class="card-head">
+            <h2 class="card-title">Cloud Save &amp; Hall of Fame</h2>
+          </div>
+          <div class="cloud-controls">
+            <input type="text" id="trainerIdInput" class="trainer-input" maxlength="32" placeholder="Trainer ID (e.g. ash-kanto)" aria-label="Trainer ID">
+            <div class="cloud-btn-row">
+              <button type="button" id="cloudSaveBtn" class="ui-btn">CLOUD SAVE</button>
+              <button type="button" id="cloudLoadBtn" class="ui-btn">CLOUD LOAD</button>
+              <button type="button" id="submitScoreBtn" class="ui-btn">SUBMIT RUN</button>
+            </div>
+            <div id="cloudFeedback" class="cloud-feedback">Checking backend availability...</div>
+          </div>
+          <div id="leaderboardList" class="lb-list"></div>
+        </section>
       </aside>
     </div>
 
@@ -112,5 +130,6 @@
     </section>
   </main>
   <script src="game.js"></script>
+  <script src="api-client.js"></script>
 </body>
 </html>

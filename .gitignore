@@ -9,8 +9,16 @@ desktop.ini
 *.swp
 *.swo
 
+# Local backend data & environment
+.data/
+.vercel/
+.env
+.env.local
+node_modules/
+
 # Logs and local scratch output
 *.log
 npm-debug.log*
 tmp/
 .cache/
+_site/

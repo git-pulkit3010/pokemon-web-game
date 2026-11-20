@@ -1,0 +1,14 @@
+{
+  "name": "pokemon-kanto-mini-quest",
+  "version": "1.0.0",
+  "description": "Retro GBA pixel-art Pokemon web game with zero-dependency Node.js backend, Vercel Serverless API, and GitHub Pages static deployment.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check lib/store.js && node --check api/health.js && node --check api/save.js && node --check api/leaderboard.js && node --check api-client.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
